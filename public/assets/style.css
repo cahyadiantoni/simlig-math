@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  min-height: 100%;
+  margin: 0px;
+}
+
+.appcontainer {
+  position: absolute;
+  width: 100vw;
+  height: 800px;
+}
