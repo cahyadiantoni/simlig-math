@@ -10,6 +10,8 @@
       }
     </style>
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
   </head>
   <body>
     <div class="appcontainer">
@@ -41,6 +43,41 @@
           <img src="assets/icon/9.png" width="30%" style="margin-bottom: 10%;"/>
         </a>
       </div>
+
+      <div style="margin: 25% 0 0 45%">
+        <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search" id="logout-form">
+            @csrf
+            @method('DELETE')
+            <a href="#" class="dropdown-item" onclick="confirmLogout(event)">
+                <img src="assets/icon/logout.png" width="20%" style="margin-bottom: 10%;"/>
+            </a>
+        </form>
+        <a href="{{ route('evaluasi') }}">
+        </a>
+      </div>
+
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Function to confirm logout
+      function confirmLogout(event) {
+          event.preventDefault();
+          Swal.fire({
+              title: 'Logout',
+              text: 'Are you sure you want to logout?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, logout'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  document.getElementById('logout-form').submit();
+              }
+          });
+      }
+  </script>
   </body>
 </html>

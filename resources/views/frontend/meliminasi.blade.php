@@ -39,8 +39,20 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="appcontainer">
-      <div style="margin: 180% 0 0 5%">
+  <div class="appcontainer" style="font-family: Perpetua, serif; text-align: justify; color: #004AAD; font-size: 16px; line-height: 20px">
+      <div style="margin: 28% 8% 0 8%;">
+      Metode eliminasi merupakan metode menghilangkan salah satu variabel untuk mendapatkan nilai pada variabel lainnya. Berikut adalah langkah - langkahnya : 
+      <br><br>
+      Langkah 1 : <br>
+      Mengeliminasi salah satu peubah x atau y atau z sehingga diperoleh SPLDV 
+      <br><br>
+      Langkah 2 : <br>
+      Menyeuaikan SPLDV yang didapat pada langkah 1 
+      <br><br>
+      Langkah 3: <br>
+      Mensubstitusikan nilai - nilai peubah yang diperoleh pada langkah 2 kedalam salah satu persamaan semula untuk mendapatkan nilai peubah yang lainnya. 
+      </div>
+      <div style="margin: 65% 0 0 5%">
         <a href="#" onclick="showVideoModal('aAAeeteNmOk')">
           <img src="assets/icon/38.png" width="94%"/>
         </a>

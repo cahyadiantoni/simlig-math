@@ -39,8 +39,20 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="appcontainer">
-      <div style="margin: 180% 0 0 5%">
+    <div class="appcontainer" style="font-family: Perpetua, serif; text-align: justify; color: #004AAD; font-size: 16px; line-height: 20px">
+      <div style="margin: 28% 8% 0 8%;">
+      Metode  substitusi merupakan metode dengan memasukkan persamaan satu ke persamaan lainnya untuk mendapatkan persamaan baru sehingga bisa membantu menemtukan nilai yang sedang dicari langkah - langkah penyelesaian metode substitusi SPLTV (dalam x,y, dan z) adalah sebagai berikut : 
+      <br><br>
+      Langkah 1 : <br>
+      Memilih salah satu persamaan yang sederhana, kemudian nyatakan x sebagai fungsi y atau fungsi z, atau y sebagai fungsi x dan z, atau z adalah x dan y. 
+      <br><br>
+      langkah 2 : <br>
+      Mensubstitusikan x atau y atau z yang diperoleh pada langkah 1 ke dalam dua persamanaan yang lainnya sehingga didapat SPLTV 
+      <br><br>
+      Langkah 3 : <br>
+      Menyelesaikan SPLDV yang diperoleh pada langkah 2. 
+      </div>
+      <div style="margin: 65% 0 0 5%">
         <a href="#" onclick="showVideoModal('CBwQRMjC00w')">
           <img src="assets/icon/38.png" width="94%"/>
         </a>

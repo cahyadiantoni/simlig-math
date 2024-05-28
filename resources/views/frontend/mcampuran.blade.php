@@ -39,8 +39,19 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="appcontainer">
-      <div style="margin: 180% 0 0 5%">
+    <div class="appcontainer" style="font-family: Perpetua, serif; text-align: justify; color: #004AAD; font-size: 16px; line-height: 20px">
+      <div style="margin: 28% 8% 0 8%;">
+      Metode campuran adalah metode yang menggunakan gabungan dari metode eliminasi dan metode substitusi. penggunaan metode campuran dapat dilakukan dengan langkah - langkah berikut : 
+      <br><br>
+      Langkah 1 : Eliminasi atau hilangkan salah satu variabel dengan menyamakan konstanta variabel yang akan dieliminasi 
+      <br><br>
+      Langkah 2 : Setelah terbentuk Sistem Persamaan Linear Dua Variabel, lakukan eliminasi pada langkah 1 hingga di peroleh nilah salah satu variabel 
+      <br><br>
+      Langkah 3 : Substitusikan nilai variabel yang diketahui pada salah satu persamaan linear dua variabelnya sehingga diperoleh nilai variabel yang lain 
+      <br><br>
+      Langkah 4 : Lakukan langkah yang sama hingga semua variabel diketahui nilainnya.   
+      </div>
+      <div style="margin: 5% 0 0 5%">
         <a href="#" onclick="showVideoModal('gB7DDyk4enM')">
           <img src="assets/icon/38.png" width="94%"/>
         </a>
