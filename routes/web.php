@@ -9,6 +9,7 @@ use App\Http\Controllers\LatihanEliminasiController;
 use App\Http\Controllers\LatihanCampuranController;
 use App\Http\Controllers\LatihanEndController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,24 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 });
 
+
 Route::get('/', [SplashController::class, 'index'])->name('splash');
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/data-user', [UserController::class, 'index'])->name('user.data');
+    Route::get('/tambah-user', [UserController::class, 'usertambah'])->name('user.tambah');
+    Route::get('/edit-user/{id}', [UserController::class, 'useredit'])->name('user.edit');
+    Route::post('/user', [UserController::class, 'userstore'])->name('user.store');
+    Route::put('/user/{id}', [UserController::class, 'userupdate'])->name('user.update');
+    Route::delete('/user/{id}', [UserController::class, 'userdestroy'])->name('user.destroy');
+
+    Route::get('/data-quiz', [QuizController::class, 'index'])->name('quiz.data');
+    Route::get('/data-latihan_substitusi', [LatihanSubstitusiController::class, 'index'])->name('latihan_substitusi.data');
+    Route::get('/data-latihan_eliminasi', [LatihanEliminasiController::class, 'index'])->name('latihan_eliminasi.data');
+    Route::get('/data-latihan_campuran', [LatihanCampuranController::class, 'index'])->name('latihan_campuran.data');
+    Route::get('/data-pendapat', [LatihanEndController::class, 'index'])->name('pendapat.data');
+    
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/profile', function () {return view('frontend.profile'); })->name('profile');
     Route::get('/petunjuk', function () {return view('frontend.petunjuk'); })->name('petunjuk');

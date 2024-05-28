@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LatihanEndController extends Controller
 {
+    public function index()
+    {
+        $pendapat = LatihanEnd::join('users', 'pendapat.user_id', '=', 'users.id')
+            ->select('pendapat.*', 'users.name as user_name')
+            ->get();
+
+        return view('pages.pendapat', compact('pendapat'));
+    }
 
     public function latihanend()
     {

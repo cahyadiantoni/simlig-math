@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
+    public function index()
+    {
+        $quiz = Quiz::join('users', 'quiz.user_id', '=', 'users.id')
+            ->select('quiz.*', 'users.name as user_name')
+            ->get();
+
+        return view('pages.quiz', compact('quiz'));
+    }
 
     public function quiz3()
     {
@@ -133,17 +141,17 @@ class QuizController extends Controller
             ]);
 
             // Simpan file-file yang diunggah ke dalam folder
-            $folderName = Auth::user()->name; // Nama folder sesuai dengan nama pengguna yang login
+            $userName = Auth::user()->name; // Nama folder sesuai dengan nama pengguna yang login
 
             for ($i = 1; $i <= 5; $i++) {
                 if ($request->hasFile('file'.$i)) {
                     $file = $request->file('file'.$i);
-                    $fileName = '/soal'.$i.'-'.$file->getClientOriginalName();
-                    $file->storeAs("public/{$folderName}", $fileName);
+                    $fileName = $userName.'-'.'soal'.$i.'-'.$file->getClientOriginalName();
+                    $file->storeAs("public/", $fileName);
 
                     // Simpan nama file ke dalam database
                     $fieldName = 'file'.$i;
-                    $quiz->$fieldName =  $folderName.$fileName;
+                    $quiz->$fieldName =  $fileName;
                     $quiz->save();
                 }
             }

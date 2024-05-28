@@ -23,6 +23,13 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credetials)) {
+
+            $user = Auth::user();
+
+            if ($user->role == 'admin') {
+                return redirect('/data-user')->with('success', 'Login berhasil sebagai Admin');
+            }
+
             return redirect('/home')->with('success', 'Login berhasil');
         }
 

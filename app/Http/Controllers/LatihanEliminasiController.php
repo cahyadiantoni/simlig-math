@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LatihanEliminasiController extends Controller
 {
+    public function index()
+    {
+        $latihan_eliminasi = LatihanEliminasi::join('users', 'latihan_eliminasi.user_id', '=', 'users.id')
+            ->select('latihan_eliminasi.*', 'users.name as user_name')
+            ->get();
+
+        return view('pages.eliminasi', compact('latihan_eliminasi'));
+    }
 
     public function latihane2()
     {
